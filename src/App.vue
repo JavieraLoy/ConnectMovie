@@ -3,8 +3,9 @@ import {ref} from 'vue';
 import axios from 'axios';
 import MovieCard from './components/MovieCard.vue';
 import MovieModal from './components/MovieModal.vue';
+import logo from './assets/logo.png';
 
-const API_KEY= '878eeed4';
+const API_KEY= import.meta.env.VITE_OMDB_API_KEY;
 
 const busqueda= ref('');
 const resultados= ref([]);
@@ -56,8 +57,13 @@ const cerrarModal = () => {
     <section class="hero">
       <div class="hero__overlay"></div>
       <div class="hero__content container text-center">
-        <h1 class="hero__title">🎬 Encuentra tu próxima película</h1>
-        <p class="hero__subtitle">Busca entre miles de películas y descubre nuevas historias</p>
+        <img
+          :src="logo"
+          alt="ConnectMovie"
+          class="hero__logo"
+        />
+        <h1 class="hero__title">Descubre tu próxima película favorita</h1>
+        <p class="hero__subtitle">Explora entre miles de películas y encuentra nuevas historias</p>
         <div class="hero__search">
           <input 
             v-model="busqueda"
@@ -158,7 +164,17 @@ body {
   z-index: 2;
   color: white;
   max-width: 700px;
+  padding-top: 140px;
   animation: fadeIn 1s ease;
+}
+
+.hero__logo {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  opacity: 0.8;
 }
 
 .hero__title {
