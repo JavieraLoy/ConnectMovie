@@ -3,6 +3,9 @@
 Aplicación web de búsqueda de películas desarrollada con Vue 3 y Vite, que consume la API de OMDb para mostrar información en tiempo real.
 Proyecto enfocado en consumo de APIs externas y arquitectura basada en componentes en Vue 3.
 
+## 🔗 Demo en vivo:
+https://javieraloy.github.io/ConnectMovie/
+
 --------
 
 ## 📸 Vista previa
